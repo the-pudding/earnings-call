@@ -17,7 +17,7 @@ const OUT_PATH = './output/'
 const BASE_URL = 'https://www.fool.com'
 
 //Array of all the page numbers to add to the BASE_URL
-const CALL_NUMS = [1, 2, 3]
+const CALL_NUMS = d3.range(1, 408)
 
 //function to find the things we need in the html
 function getCallLinks(number){
