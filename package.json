@@ -68,7 +68,8 @@
 		"dev": "run-p serve watch:*",
 		"start": "NODE_ENV=dev run-s build dev",
 		"downloadCallHTML": "node process/s1_downloadCallHTML.js",
-		"getCallLinks": "node process/s2_getCallLinks.js"
+		"getCallLinks": "node process/s2_getCallLinks.js",
+		"downloadSingleCallHTML": "node process/s3_downloadSingleCallHTML.js"
 	},
 	"repository": {
 		"type": "git",

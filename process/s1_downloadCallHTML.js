@@ -10,6 +10,7 @@ const OUT_PATH = './output/callHTML/'
 const BASE_URL = 'https://www.fool.com/earnings-call-transcripts/?page='
 //Array of all the page numbers to add to the BASE_URL
 //const CALL_NUMS = [1, 2, 3]
+//Array of all numebr between 1 and 407
 const CALL_NUMS = d3.range(1, 408)
 
 //Function that actually pulls the page - it takes a number
