@@ -16,20 +16,43 @@ function getCallText(d) {
 
 	return new Promise((resolve, reject) => {
 		const file = fs.readFileSync(`${IN_PATH}${d}`, 'utf-8')
-		const $ = cherrio.load(file)
+		const $ = cheerio.load(file)
 
 		const fileOut = `${OUT_PATH}/${callID}.csv`
 		const exists = fs.existsSync(fileOut)
 
+		let title = null
+		let callText = null
+
 		if (exists) resolve();
 		else {
+			$('header')
+				.each((i, el) => {
+					title = $(el).find('h1').text().replace(/\s+/g,' ').trim()
+				})
+
+			$('.article-content')
+				.each((i, el) => {
+					callText = $(el).text();
+				})
+
+			if (title) callTextData.push({title, callText})
+
+			const allCallText = [].concat(...callTextData).map(d => ({
+				...d,
+			}))
+
+			const jsonFile = JSON.stringify(allCallText);
+			fs.writeFileSync(`${OUT_PATH}${callID}.json`, jsonFile)
 			resolve();
 		}
 	})
 }
 
 async function init() {
-	const files = fs.readdirSync(IN_PATH).filter(d => d.includes('.html'));
+	let files = fs.readdirSync(IN_PATH).filter(d => d.includes('.html'));
+
+	//files = files.slice(0,3)
 
 	let i = 0;
 
@@ -38,7 +61,7 @@ async function init() {
 		try {
 			await getCallText(d);
 		} catch (error) {
-			consoel.log(error);
+			console.log(error);
 		}
 		i += 1;
 	}

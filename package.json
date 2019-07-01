@@ -69,7 +69,8 @@
 		"start": "NODE_ENV=dev run-s build dev",
 		"downloadCallHTML": "node process/s1_downloadCallHTML.js",
 		"getCallLinks": "node process/s2_getCallLinks.js",
-		"downloadSingleCallHTML": "node process/s3_downloadSingleCallHTML.js"
+		"downloadSingleCallHTML": "node process/s3_downloadSingleCallHTML.js",
+		"getCallText": "node process/s4_getCallText.js"
 	},
 	"repository": {
 		"type": "git",
