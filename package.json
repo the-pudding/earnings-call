@@ -12,6 +12,7 @@
 		"cli-error-notifier": "2.1.0",
 		"d3": "^5.9.7",
 		"fs": "0.0.1-security",
+		"json-concat": "0.0.1",
 		"lodash.debounce": "4.0.8",
 		"nouislider": "13.1.5",
 		"rimraf": "2.6.3",
