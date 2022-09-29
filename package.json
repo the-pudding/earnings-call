@@ -10,7 +10,7 @@
 	"dependencies": {
 		"cheerio": "^1.0.0-rc.3",
 		"cli-error-notifier": "2.1.0",
-		"d3": "^5.9.7",
+		"d3": "^7.6.1",
 		"fs": "0.0.1-security",
 		"json-concat": "0.0.1",
 		"lodash.debounce": "4.0.8",
